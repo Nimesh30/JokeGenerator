@@ -12,7 +12,21 @@ document.getElementById('jokeBtn').addEventListener('click', async () => {
         } else {
             jokeDisplay.innerHTML = `<p>${data.setup}</p><p>${data.delivery}</p>`;
         }
+        const copyBtn = document.getElementById('copyBtn').addEventListener('click',()=>{ 
+            navigator.clipboard.writeText(jokeDisplay.innerText);
+        });
     } catch (error) {
         jokeDisplay.innerHTML = `<p>Sorry, something went wrong. Please try again later.</p>`;
     }
 });
+
+// if (jokeBtn) {
+//    let copyBtn = document.createElement("Button");
+//    copyBtn.setAttribute('id','copyBtn');
+//    document.body.lastElementChild(copyBtn);
+// } else {
+    
+// }
+// const copyBtn = document.getElementById('copyBtn').addEventListener('click',()=>{ 
+//     navigator.clipboard.writeText(jokeDisplay.innerText);
+// });

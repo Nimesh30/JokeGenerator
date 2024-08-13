@@ -6,12 +6,12 @@ body {
     align-items: center;
     height: 100vh;
     margin: 0;
-    background-color: #f4f4f9;
+    background-color: #EEEDEB ;
 }
 
 .container {
     text-align: center;
-    background-color: #fff;
+    background-color:#F1E5D1;
     padding: 30px;
     border-radius: 8px;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
@@ -27,8 +27,8 @@ h1 {
 button {
     padding: 10px 20px;
     font-size: 1em;
-    color: #fff;
-    background-color: #007bff;
+    color: #f9f9f9;
+    background-color: #6298d2;
     border: none;
     border-radius: 5px;
     cursor: pointer;
@@ -42,5 +42,5 @@ button:hover {
 .joke-display {
     margin-top: 20px;
     font-size: 1.2em;
-    color: #555;
+    color: #000000;
 }
