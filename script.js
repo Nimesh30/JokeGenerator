@@ -1,24 +1,30 @@
 // script.js
-document.getElementById('jokeBtn').addEventListener('click', async () => {
-    const jokeDisplay = document.getElementById('jokeDisplay');
-    jokeDisplay.innerHTML = "Loading...";
+const jokeBtn = document.getElementById("jokeBtn");
+const copyBtn = document.getElementById("copyBtn");
 
-    try {
-        const response = await fetch('https://v2.jokeapi.dev/joke/Any');
-        const data = await response.json();
+jokeBtn.addEventListener("click", async () => {
+  const jokeDisplay = document.getElementById("jokeDisplay");
+  jokeDisplay.innerHTML = "Loading...";
+  jokeBtn.disabled = true;
 
-        if (data.type === 'single') {
-            jokeDisplay.innerHTML = `<p>${data.joke}</p>`;
-        } else {
-            jokeDisplay.innerHTML = `<p>${data.setup}</p><p>${data.delivery}</p>`;
-        }
-       
-    } catch (error) {
-        jokeDisplay.innerHTML = `<p>Sorry, something went wrong. Please try again later.</p>`;
+  try {
+    const response = await fetch("https://v2.jokeapi.dev/joke/Any");
+    const data = await response.json();
+
+    if (data.type === "single") {
+      jokeDisplay.innerHTML = `<p>${data.joke}</p>`;
+    } else {
+      jokeDisplay.innerHTML = `<p>${data.setup}</p><p>${data.delivery}</p>`;
     }
+    copyBtn.removeAttribute("hidden");
+  } catch (error) {
+    jokeDisplay.innerHTML = `<p>Sorry, something went wrong. Please try again later.</p>`;
+  } finally {
+    jokeBtn.disabled = false;
+  }
 });
 
-const copyBtn = document.getElementById('copyBtn').addEventListener('click',()=>{ 
-    navigator.clipboard.writeText(jokeDisplay.innerText);
-    alert('Joke copied to clipboard.');
+copyBtn.addEventListener("click", () => {
+  navigator.clipboard.writeText(jokeDisplay.innerText);
+  alert("Joke copied to clipboard.");
 });
