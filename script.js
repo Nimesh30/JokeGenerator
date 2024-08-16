@@ -18,7 +18,7 @@ jokeBtn.addEventListener("click", async () => {
     }
     copyBtn.removeAttribute("hidden");
   } catch (error) {
-    jokeDisplay.innerHTML = `<p>Sorry, something went wrong. Please try again later.</p>`;
+    jokeDisplay.innerHTML = `<p>Sorry, something went wrong... Please try again later.</p>`;
   } finally {
     jokeBtn.disabled = false;
   }
