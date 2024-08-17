@@ -1,6 +1,10 @@
 // script.js
 const jokeBtn = document.getElementById("jokeBtn");
 const copyBtn = document.getElementById("copyBtn");
+ 
+function theme() {
+  document.body.classList.toggle('dark');
+}
 
 jokeBtn.addEventListener("click", async () => {
   const jokeDisplay = document.getElementById("jokeDisplay");
