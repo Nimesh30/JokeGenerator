@@ -6,13 +6,14 @@ body {
     align-items: center;
     height: 100vh;
     margin: 0;
-    background-color: #EEEDEB ;
+    /* background-color: #EEEDEB ; */
+    background-color: #ffffff;
 }
 
 .container {
     text-align: center;
     background-color:#F1E5D1;
-    padding: 30px;
+    padding: 60px;
     border-radius: 8px;
     box-shadow: 0 0 40px rgba(0, 0, 0, 0.1);
     max-width: 600px;
@@ -43,4 +44,20 @@ button:hover {
     margin-top: 20px;
     font-size: 1.2em;
     color: #000000;
+}
+
+body.dark{
+    background-color: #000000;
+    color: #ffffff;
+}
+#theme{
+
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    padding: 10px 15px;
+    background-color: #007bff;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
 }
